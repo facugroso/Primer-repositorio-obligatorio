@@ -21,3 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("txtEmail").innerHTML = emailLocSto;
 
 })
+
+
+

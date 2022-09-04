@@ -26,7 +26,7 @@ for (let produ of array) {
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUAUT_URL).then(function(resultObj){
+    getJSONData(CATEGORIES_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             produArray = resultObj.data;
@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+
+
+
 
 // DATOS PARA SOLUCIONAR EL PROBLEMA
 // "catID": 101,
