@@ -26,7 +26,7 @@ for (let produ of array) {
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(CATEGORIES_URL).then(function(resultObj){
+    getJSONData(PRODUAUT_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             produArray = resultObj.data;
