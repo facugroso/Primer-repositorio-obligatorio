@@ -9,11 +9,6 @@ const PRODUAUT_URL = "https://japceibal.github.io/emercado-api/cats_products/101
 const EXT_TYPE = ".json";
 
 
-function catName(name){
-  localStorage("name", email);
-
-}
-
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
