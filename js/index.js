@@ -22,5 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
+function guardarEmail(email) {
+    localStorage.setItem("email", email);
+}
 
 

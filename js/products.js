@@ -1,4 +1,16 @@
+const PRODU_URL = "https://japceibal.github.io/emercado-api/cats_products/"+localStorage.getItem("catID")+".json";
 let produArray = [];
+
+
+
+function cat(){
+    for (let produ of array){
+    let cat= document.getElementById("catName")
+    showProduList();
+    showCat();
+    cat.innerHTML += produ.catName ; 
+}}
+
 
 function showProduList(array) {
 for (let produ of array) {
@@ -26,7 +38,7 @@ for (let produ of array) {
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUAUT_URL).then(function(resultObj){
+    getJSONData(PRODU_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             produArray = resultObj.data;
