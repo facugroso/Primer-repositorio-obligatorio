@@ -1,20 +1,25 @@
 const PRODU_URL = "https://japceibal.github.io/emercado-api/cats_products/"+localStorage.getItem("catID")+".json";
 let produArray = [];
+let catArray = [];
 
 
 
-function cat(){
-    for (let produ of array){
+function cat(array){
+    for (let cat of array){
     let cat= document.getElementById("catName")
     showProduList();
-    showCat();
     cat.innerHTML += produ.catName ; 
-}}
+}} 
 
 
+
+
+
+//<div class="lista,grupo, lista de elementos,grupo,elemento,acción">
 function showProduList(array) {
 for (let produ of array) {
     document.getElementById("container").innerHTML += `
+    
     
     <div class="list-group-item list-group-item-action">
     <div class="row">
@@ -50,6 +55,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
 
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODU_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            produArray = resultObj.data;
+            showCat();
+            console.log(produ.products)
+        }
+    });
+});
 
 // DATOS PARA SOLUCIONAR EL PROBLEMA
 // "catID": 101,
