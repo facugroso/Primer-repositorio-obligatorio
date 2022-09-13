@@ -5,7 +5,7 @@ let catArray = [];
 
 
 function cat(array){
-    for (let cat of array){
+    for (let cat  of array){
     let cat= document.getElementById("catName")
     showProduList();
     cat.innerHTML += produ.catName ; 
