@@ -32,12 +32,12 @@ for (let produ of array) {
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODU_URL).then(function(resultObj){
+    getJSONData(PRODU_URL).then(function(resultObj){//resultObj es el objeto o date quele paso por parámetro que esperamos recibir para que haga su trabajo
         if (resultObj.status === "ok")
         {
             produArray = resultObj.data;
             showProduList(produArray.products);
-            console.log(produ.products)
+            console.log(produ.products) //me muestra mi funcion produ dentro de productos(no devuelve valor como los return)
         }
     });
 });
@@ -50,10 +50,9 @@ function cat(array){
    
                 <p> `+ produ.catName +`</p> 
                 </div>
-    
     `
 }
-lista.innerHTML+= opcion;
+lista.innerHTML = opcion;
 console.log(array)
 } 
 
