@@ -1,17 +1,6 @@
 
 let produArray = [];
-
-
 let catArray = [];
-
-function cat(array){
-    for (let cat  of array){
-    let cat= document.getElementById("catName")
-    showProduList();
-    cat.innerHTML += produ.catName ; 
-}} 
-
-
 
 
 
@@ -53,12 +42,20 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 });
 
-function showCat(array){
+
+function cat(array){
+    let opcion = "";
     for (let cat  of array){
-    let cat= document.getElementById("catName")
-    showProduList();
-    cat.innerHTML += produ.catName ; 
-}} 
+    document.getElementById("catName").innerHTML += `
+   
+                <p> `+ produ.catName +`</p> 
+                </div>
+    
+    `
+}
+lista.innerHTML+= opcion;
+console.log(array)
+} 
 
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODU_URL).then(function(resultObj){
