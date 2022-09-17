@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         {
             produArray = resultObj.data;
             showProduList(produArray.products);
-            console.log(produ.products) //me muestra mi funcion produ dentro de productos(no devuelve valor como los return)
+            //console.log(produ.products); //me muestra mi funcion produ dentro de productos(no devuelve valor como los return)
         }
     });
 });
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
             console.log(resultObj);
             const catName = document.getElementById("catName");
             catName.innerHTML = catArray.catName;
-            console.log(cat.products);//me muestra mi funcion cat dentro de productos(no devuelve valor como los return)
+            //console.log(cat.products);//me muestra mi funcion cat dentro de productos(no devuelve valor como los return)
       }
     });
 })
