@@ -31,7 +31,7 @@ for (let produ of array) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", (e)=>{
     getJSONData(PRODU_URL).then(function(resultObj){//resultObj es el objeto o date quele paso por parámetro que esperamos recibir para que haga su trabajo
         if (resultObj.status === "ok")
         {
@@ -41,22 +41,46 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+/*Cree un nuevo JSON, donde le digo luego de extraer la data del produ_url. Creouna función que le paso
+por parametro "resultObj", utilizando el if le ordeno que si todo esta "ok".
+Luego consologuie la data de mi atributo (lo que pasé por parámetro en la función). Después cree una constante, "catName"
+que almacena el id (lo obtengo con el DOM) del span (del párrafo) del html.
+Luego utilizando innerHTML lo que hago es, tomar el texto del párrafo y agregarrle mi constante con la data correspondiente que contiene catName.
+*/
+document.addEventListener("DOMContentLoaded", (e)=>{
+    getJSONData(PRODU_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {   
+            catArray = resultObj.data;
+            console.log(resultObj);
+            const catName = document.getElementById("catName");
+            catName.innerHTML = catArray.catName;
+            console.log(cat.products);//me muestra mi funcion cat dentro de productos(no devuelve valor como los return)
+      }
+    });
+})
 
 
-function cat(array){
-    let opcion = "";
-    for (let cat  of array){
+
+
+
+
+/*function opcion(catName){
+    
+    for (let opcion  of catName)
+    console.log(catName)
+    {
     document.getElementById("catName").innerHTML += `
    
                 <p> `+ produ.catName +`</p> 
-                </div>
+      
     `
 }
-lista.innerHTML = opcion;
-console.log(array)
+
+
 } 
 
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", (e)=>{
     getJSONData(PRODU_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
@@ -65,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             console.log(cat.products)
         }
     });
-});
+});*/
 
 // DATOS PARA SOLUCIONAR EL PROBLEMA
 // "catID": 101,
