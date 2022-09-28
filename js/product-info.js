@@ -8,45 +8,42 @@ document.addEventListener("DOMContentLoaded", function (e) {
       const produToShow = produArray.products.find(
         (item) => item.id == localStorage.getItem("itemID")
       );
-      showProdu(produToShow);
       console.log(produToShow);
+      showProdu(produToShow);
     }
   });
 });
 
 function showProdu(produ) {
   document.getElementById("container").innerHTML +=
-    `
-    <div class="list-group-item list-group-item-action" onclick='clickeada(` +
-    produ.id +
-    `)'>
-    <div class="row">
-        <div class="col-3">
-            <img src="` +
-    produ.image +
-    `" alt="product image" class="img-thumbnail">
-        </div>
-        <div class="col">
-            <div class="d-flex w-100 justify-content-between">
-                <div class="mb-1">
-                <h4>` +
-    produ.name +
-    " " +
-    produ.currency +
-    " " + 
-    produ.cost +
-    `</h4> 
-                <p> ` +
-    produ.description +
-    `</p> 
-                </div>
-                <small class="text-muted">` +
-    produ.soldCount +
-    ` artículos</small>
-            </div>
-
-        </div>
+    `<div class="container" >
+    <div class="h2">
+    `+produ.name+` 
     </div>
-</div>
+    
+    <div><strong >Precio</strong> 
+    `+produ.currency + produ.cost +`
+    </div>
+    
+    <div><strong >Descripción</strong>
+    `+produ.description +`
+    </div>
+
+    <div><strong>Categoría
+    </strong> 
+    `+produ.category +`
+    </div>
+
+
+    <div><strong >Cantidad de vendidos</strong>
+    `+produ.soldCount +`
+    </div>
+    <div> <strong >Imagenes ilustrativas</strong>
+    
+    <div class="contenedor-img"><img class="img-responsive img-thumbnail" src="`+produ.image+`"/>
+    </div></div>
+    
+
+    </div>
 `;
 }
