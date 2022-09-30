@@ -1,20 +1,9 @@
 let produArray = [];
 let catArray = [];
+const ORDER_ASC_BY_NAME = "AZ";
+const ORDER_DESC_BY_NAME = "ZA";
+const ORDER_BY_PROD_COUNT = "Cant.";
 
-document.addEventListener("DOMContentLoaded", function (e) {
-  getJSONData(PRODU_URL).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      produArray = resultObj.data;
-
-      showProduList(produArray.products);
-    }
-    if (resultObj.status === "ok") {
-      catArray = resultObj.data;
-      const catName = document.getElementById("catName");
-      catName.innerHTML = catArray.catName;
-    }
-  });
-});
 
 const clickeada = (p) => {
   localStorage.setItem("itemID", `${p}`);
@@ -22,6 +11,7 @@ const clickeada = (p) => {
 
 //<div class="lista,grupo, lista de elementos,grupo,elemento,acción">
 function showProduList(array) {
+  
   array.forEach((produ) => {
     document.getElementById("container").innerHTML +=
       `<a href="product-info.html" style="text-decoration:none;">
@@ -59,7 +49,20 @@ function showProduList(array) {
 </a>`;
   });
 }
+document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(PRODU_URL).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      produArray = resultObj.data;
 
+      showProduList(produArray.products);
+    }
+    if (resultObj.status === "ok") {
+      catArray = resultObj.data;
+      const catName = document.getElementById("catName");
+      catName.innerHTML = catArray.catName;
+    }
+  });
+});
 function cat(array) {
   let opcion = "";
   for (let cat of array) {
@@ -69,7 +72,7 @@ function cat(array) {
                 <p> ` +
       produ.catName +
       `</p> 
-                </div>
+               
     `;
   }
   lista.innerHTML = opcion;

@@ -1,14 +1,11 @@
-let produArray = [];
+let produToShow = [];
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  getJSONData(PRODU_URL).then(function (resultObj) {
+  getJSONData(PRODU_INFO).then(function (resultObj) {
     
     if (resultObj.status === "ok") {
-      produArray = resultObj.data;
-      const produToShow = produArray.products.find(
-        (item) => item.id == localStorage.getItem("itemID")
-      );
-      console.log(produToShow);
+      produToShow = resultObj.data;
+      
       showProdu(produToShow);
     }
   });
@@ -20,7 +17,7 @@ function showProdu(produ) {
     <div class="h2">
     `+produ.name+` 
     </div>
-    
+    hr
     <div><strong >Precio</strong> 
     `+produ.currency + produ.cost +`
     </div>
@@ -28,13 +25,13 @@ function showProdu(produ) {
     <div><strong >Descripción</strong>
     `+produ.description +`
     </div>
-
+    
     <div><strong>Categoría
     </strong> 
     `+produ.category +`
     </div>
-
-
+    
+    
     <div><strong >Cantidad de vendidos</strong>
     `+produ.soldCount +`
     </div>
@@ -45,5 +42,22 @@ function showProdu(produ) {
     
 
     </div>
-`;
-}
+    `;
+  }  
+
+  function mosImg(array) {
+    let opcion = "";
+    for (let produ of array) {
+      document.getElementById("itemID").innerHTML +=
+        `
+     
+                  <p> ` +
+        produ.image +
+        `</p> 
+                  </div>
+      `;
+    }
+    lista.innerHTML = opcion;
+    console.log(array);
+  }
+  
