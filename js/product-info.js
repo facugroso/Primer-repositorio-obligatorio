@@ -62,11 +62,13 @@ function showProdu(produ) {
     `;
   }  
   
+
+  
   
     function showComents(array){
       
       const listComents = array.data.map((item)=>{
-        return `<div class="containers" class="">
+        return `<div class="container thumbnail">
         <strong>`+item.user+`</strong>
         <span >`+item.dateTime+`</span>
         <span >`+item.score+`</span>
@@ -77,8 +79,12 @@ function showProdu(produ) {
 
           }) 
       document.getElementById("containerComents").innerHTML+=
-      
-      listComents
+      `<div class="container">
+      <h4 class="container">Comentarios</h4>
+      `+
+      listComents+
+      `
+      </div>`
     }
   
  
