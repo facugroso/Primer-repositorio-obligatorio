@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       
       showProdu(produToShow);
       
-      console.log(produToShow)
+      
     }
   });
 });
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
     if (resultObj.status === "ok") {
       showComents(resultObj)
-      console.log(resultObj)
+      
     }
   });
 });
@@ -70,8 +70,8 @@ function showProdu(produ) {
       const listComents = array.data.map((item)=>{
         return `<div class="container thumbnail">
         <strong>`+item.user+`</strong>
-        <span >`+item.dateTime+`</span>
-        <span >`+item.score+`</span>
+        <span >-`+item.dateTime+`-</span>
+        <span class="fa fa-star checked">`+item.score+`</span>
         <div >`+item.description+`</div>
         </div>   
         `
@@ -84,9 +84,24 @@ function showProdu(produ) {
       `+
       listComents+
       `
-      </div>`
+      </div>
+      <div class="container">
+      <h4 class="container">Comentar</h4>
+      </div>
+      <div class="container">
+      <form action=>
+      <p class="container">Tu opinión:</p>
+      <input>
+      <p class="container">Tu puntuación:</p>
+      <button >Enviar</button>
+      </form>
+      </div>
+     `
+      
     }
   
+
+    
  
     
     
