@@ -7,17 +7,34 @@ document.addEventListener("DOMContentLoaded", function (e) {
       produToShow = resultObj.data;
       
       showProdu(produToShow);
+      
+      console.log(produToShow)
     }
   });
 });
 
+document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      showComents(resultObj)
+      console.log(resultObj)
+    }
+  });
+});
+
+
+
+
 function showProdu(produ) {
+  const listImg = produ.images.map((item)=>{
+    return ` <img class="img-responsive img-thumbnail" src="${item}">`       
+      }) 
   document.getElementById("container").innerHTML +=
     `<div class="container" >
     <div class="h2">
     `+produ.name+` 
     </div>
-    hr
+    
     <div><strong >Precio</strong> 
     `+produ.currency + produ.cost +`
     </div>
@@ -37,27 +54,35 @@ function showProdu(produ) {
     </div>
     <div> <strong >Imagenes ilustrativas</strong>
     
-    <div class="contenedor-img"><img class="img-responsive img-thumbnail" src="`+produ.image+`"/>
+    <div class="contenedor-img">`+listImg+`
     </div></div>
     
-
+    
     </div>
     `;
   }  
-
-  function mosImg(array) {
-    let opcion = "";
-    for (let produ of array) {
-      document.getElementById("itemID").innerHTML +=
-        `
-     
-                  <p> ` +
-        produ.image +
-        `</p> 
-                  </div>
-      `;
-    }
-    lista.innerHTML = opcion;
-    console.log(array);
-  }
   
+  
+    function showComents(array){
+      
+      const listComents = array.data.map((item)=>{
+        return `<div class="containers" class="">
+        <strong>`+item.user+`</strong>
+        <span >`+item.dateTime+`</span>
+        <span >`+item.score+`</span>
+        <div >`+item.description+`</div>
+        </div>   
+        `
+        
+
+          }) 
+      document.getElementById("containerComents").innerHTML+=
+      
+      listComents
+    }
+  
+ 
+    
+    
+    
+    
