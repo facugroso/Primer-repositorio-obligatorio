@@ -85,22 +85,27 @@ function showProdu(produ) {
       listComents+
       `
       </div>
+      
       <div class="container">
       <h4 class="container">Comentar</h4>
       </div>
+      
       <div class="container">
       <form action=>
       <p class="container">Tu opinión:</p>
       <input>
       <p class="container">Tu puntuación:</p>
-      <button >Enviar</button>
+      <input class="container">
+      <button id="button">Enviar</button> 
       </form>
       </div>
      `
       
     }
   
-
+    
+  
+  
     
  
     

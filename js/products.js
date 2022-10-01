@@ -76,5 +76,6 @@ function cat(array) {
     `;
   }
   lista.innerHTML = opcion;
-  console.log(array);
+  
 }
+
