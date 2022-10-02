@@ -28,16 +28,10 @@ function showProduList(array) {
             <div class="d-flex w-100 justify-content-between">
                 <div class="mb-1">
                 <h4>` +
-      produ.name +
-      " " +
-      produ.currency +
-      " " +
-      produ.cost +
-      `</h4> 
-                <p> ` +
-      produ.description +
-      `</p> 
-                </div>
+                produ.name + " " + produ.currency + " " + produ.cost +
+               `</h4> 
+                <p> ` + produ.description + `</p> 
+            </div>
                 <small class="text-muted">` +
       produ.soldCount +
       ` artículos</small>
