@@ -1,29 +1,5 @@
 let produToShow = [];
 
-document.addEventListener("DOMContentLoaded", function (e) {
-  getJSONData(PRODU_INFO).then(function (resultObj) {
-    
-    if (resultObj.status === "ok") {
-      produToShow = resultObj.data;
-      
-      showProdu(produToShow);
-      
-      
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      showComents(resultObj)
-      
-    }
-  });
-});
-
-
-
 
 function showProdu(produ) {
   const listImg = produ.images.map((item)=>{
@@ -62,6 +38,19 @@ function showProdu(produ) {
     `;
   }  
   
+document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(PRODU_INFO).then(function (resultObj) {
+    
+    if (resultObj.status === "ok") {
+      produToShow = resultObj.data;
+      
+      showProdu(produToShow);
+      
+      
+    }
+  });
+});
+
 
   
   
@@ -103,7 +92,15 @@ function showProdu(produ) {
       
     }
   
-    
+    document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      showComents(resultObj)
+      
+    }
+  });
+});
+
   
   
     

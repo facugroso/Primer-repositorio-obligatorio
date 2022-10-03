@@ -13,28 +13,20 @@ const clickeada = (p) => {
 function showProduList(array) {
   
   array.forEach((produ) => {
-    document.getElementById("container").innerHTML +=
-      `<a href="product-info.html" style="text-decoration:none;">
-    <div class="list-group-item list-group-item-action" onclick='clickeada(` +
-      produ.id +
-      `)'>
+  document.getElementById("container").innerHTML += `
+    <a href="product-info.html" style="text-decoration:none;">
+    <div class="list-group-item list-group-item-action" onclick='clickeada(`+ produ.id +`)'>
     <div class="row">
         <div class="col-3">
-            <img src="` +
-      produ.image +
-      `" alt="product image" class="img-thumbnail">
+            <img src="` + produ.image + `" alt="product image" class="img-thumbnail">
         </div>
         <div class="col">
             <div class="d-flex w-100 justify-content-between">
                 <div class="mb-1">
-                <h4>` +
-                produ.name + " " + produ.currency + " " + produ.cost +
-               `</h4> 
-                <p> ` + produ.description + `</p> 
-            </div>
-                <small class="text-muted">` +
-      produ.soldCount +
-      ` artículos</small>
+                <h4>`+ produ.name + " " + produ.currency + " " + produ.cost +`</h4> 
+                <p> `+ produ.description +`</p> 
+                </div>
+                <small class="text-muted">` + produ.soldCount + ` artículos</small>
             </div>
 
         </div>
