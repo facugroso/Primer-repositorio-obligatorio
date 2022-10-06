@@ -53,19 +53,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
     if (resultObj.status === "ok") {
       showComents(resultObj);
+      
     }
   })
 });
-function prorelation(array){
+
+
+function showProduRelation(array){
   const relacion = array.relatedProducts.map((item)=>{
-    return`<div class="container thumbnail"> <div > ${item.image} </div><div > ${item.name} </div> </div>
+    return`<div class="container thumbnail d-inline w-50" > <div class=" container"> <img src='${item.image}'class="w-25"> </div> <div> ${item.name} </div> </div>
     ` 
   } 
-
+  
   )
-}
-function showProduRelation(array){
-  document.getElementById("prodRela").innerHTML += prorelation(array) 
+  document.getElementById("prodRela").innerHTML += relacion 
 
 }
 
