@@ -45,14 +45,31 @@ document.addEventListener("DOMContentLoaded", function (e) {
       produToShow = resultObj.data;
       
       showProdu(produToShow);
-      
-      
-    }
+      console.log(resultObj);
+      showProduRelation(produToShow);
+
+      }
   });
+  getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      showComents(resultObj);
+    }
+  })
 });
+function prorelation(array){
+  const relacion = array.relatedProducts.map((item)=>{
+    return`<div class="container thumbnail"> <div > ${item.image} </div><div > ${item.name} </div> </div>
+    ` 
+  } 
 
+  )
+}
+function showProduRelation(array){
+  document.getElementById("prodRela").innerHTML += prorelation(array) 
 
-  
+}
+
+   
   
     function showComents(array){
       
@@ -84,22 +101,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
       <p class="container">Tu opinión:</p>
       <input>
       <p class="container">Tu puntuación:</p>
-      <input class="container">
+      <select class="container" > `+puntuacion()+` 
+      </select>
       <button id="button">Enviar</button> 
       </form>
       </div>
      `
       
     }
-  
-    document.addEventListener("DOMContentLoaded", function (e) {
-  getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      showComents(resultObj)
+   
+  function puntuacion(){
+    for (let valoracion = 1; valoracion < 6; valoracion++) {
+      return (`<option value=${valoracion}>${valoracion}</option>`);
       
     }
-  });
-});
+  }
+  
+
 
   
   
