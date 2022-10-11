@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
+function closesesion(){
+    localStorage.removeItem("email")
+}
+
 
 
 

@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
       produToShow = resultObj.data;
       
       showProdu(produToShow);
-      console.log(resultObj);
       showProduRelation(produToShow);
 
       }
@@ -53,20 +52,29 @@ document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODUCT_INFO_COMMENTS).then(function (resultObj) {
     if (resultObj.status === "ok") {
       showComents(resultObj);
+
       
     }
   })
 });
-
-
+const clickeada = (p) => {
+  localStorage.setItem("itemID", `${p}`);
+  location.reload()
+};
 function showProduRelation(array){
   const relacion = array.relatedProducts.map((item)=>{
-    return`<div class="container thumbnail d-inline w-50" > <div class=" container"> <img src='${item.image}'class="w-25"> </div> <div> ${item.name} </div> </div>
+    return`<div class="container img-thumbnail d-flex flex-column"onclick='clickeada(`+ item.id +`)'> 
+    <div class="container"> 
+    <img class="container img-responsive " src='${item.image}'/> 
+    </div> 
+    <div class="container">  ${item.name} </div> 
+    </div>
+  
     ` 
   } 
   
   )
-  document.getElementById("prodRela").innerHTML += relacion 
+  document.getElementById("prodRela").innerHTML += `<div class="container d-flex w-50 ">${relacion}</div>`
 
 }
 
@@ -102,7 +110,7 @@ function showProduRelation(array){
       <p class="container">Tu opinión:</p>
       <input>
       <p class="container">Tu puntuación:</p>
-      <select class="container" > `+puntuacion()+` 
+      <select class="container" > `+ puntuacion() +` 
       </select>
       <button id="button">Enviar</button> 
       </form>
@@ -112,12 +120,18 @@ function showProduRelation(array){
     }
    
   function puntuacion(){
+    const numeros = []
     for (let valoracion = 1; valoracion < 6; valoracion++) {
-      return (`<option value=${valoracion}>${valoracion}</option>`);
+      numeros.push(`<option value=${valoracion}>${valoracion}</option>`);
       
     }
+    return numeros.join("")
+    
   }
-  
+
+
+
+
 
 
   
