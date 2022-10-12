@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       produToShow = resultObj.data;
       
       showProdu(produToShow);
-      
+      console.log(produToShow)
       showProduRelation(produToShow);
 
       }
