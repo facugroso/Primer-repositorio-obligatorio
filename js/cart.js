@@ -33,16 +33,11 @@ function showProduCart(array){
     }
 
     document.addEventListener("DOMContentLoaded", function (e) {
-        getJSONData(PRODU_URL).then(function (resultObj) {
+        getJSONData(CARRITO_URL).then(function (resultObj) {
           if (resultObj.status === "ok") {
             produArray = resultObj.data;
       
-            showProduList(produArray.products);
-          }
-          if (resultObj.status === "ok") {
-            catArray = resultObj.data;
-            const catName = document.getElementById("catName");
-            catName.innerHTML = catArray.catName;
+            showProduCart(produArray.products);
           }
         });
       });
