@@ -1,49 +1,45 @@
-const produToShow = [];
+function showCartList(array) {
+    array.forEach((produ) => {
+      document.getElementById("container").innerHTML +=
+        `
+        <div class="row">
+        
+        <div class="col-1 container" >
+        <img src= "${produ.image}" class="image-thumbnail"/>
+        </div>
+       
 
-function showProduCart(array){
-  
-    const aux = `
-          <div class="list-group-item list-group-item-action cursor-active">
-              <div class="row">
-                  <div class="col-5">
-                      <img src="${array.image}" class="img-thumbnail">
-                  </div>
-                  <div class="col">
-                      <div class="d-flex w-100 justify-content-between">
-                          <h4 class="mb-1">${array.name}</h4>
-                          <small class="text-muted">${array.count} artículos</small>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          `
-          return aux;
-  } 
+        <div class="col-1">
+         ${produ.name}
+        </div>
+
+        <div class="col-1">
+        ${produ.currency} ${produ.unitCost}
+        
+        </div>
 
 
+        <div class="col-1">
+        ${produ.count}
+        
+        </div> 
 
 
+        <div class="col-1">
+        
+        </div>
+        ${produ.count}*${produ.unitCost}
 
-
-function je (array){
-    document.getElementById("container").innerHTML += `
-    <div>
-    </div>
-    <div>
-    ${showProduCart(array)}
-    </div>
-    `}
-    
-document.addEventListener("DOMContentLoaded", function (e) {
-        getJSONData(CARRITO_URL).then(function (resultObj) {
-            if (resultObj.status === "ok") {
-                console.log(resultObj)
-                produToShow.push(resultObj.data.articles)
-                console.log(produToShow)
-                console.log(showProduCart(produToShow[0]))
-                je(produToShow.articles)
-          
-        }
+        </div> 
+        `;
     });
-});
-  
+  }
+  document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(CARRITO_URL).then(function (resultObj) {
+      if (resultObj.status === "ok") {
+        produArray = resultObj.data;
+        showCartList(produArray.articles);
+        console.log(produArray.articles)
+      }
+    });
+  });
