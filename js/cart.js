@@ -1,37 +1,38 @@
 function showCartList(array) {
     array.forEach((produ) => {
-      document.getElementById("container").innerHTML +=
-        `
-        <div class="row">
-        
-        <div class="col-1 container" >
-        <img src= "${produ.image}" class="image-thumbnail"/>
-        </div>
-       
-
-        <div class="col-1">
-         ${produ.name}
-        </div>
-
-        <div class="col-1">
-        ${produ.currency} ${produ.unitCost}
-        
-        </div>
-
-
-        <div class="col-1">
-        ${produ.count}
-        
-        </div> 
-
-
-        <div class="col-1">
-        
-        </div>
-        ${produ.count}*${produ.unitCost}
-
-        </div> 
-        `;
+      document.getElementById("container").innerHTML += `
+          
+      <div class="row">
+          
+          <div class="col-2 container"  >
+          <img src= "${produ.image}" class="img-fluid img-thumbnail"/>
+          </div>
+         
+  
+          <div class="col-2 container">
+           ${produ.name}
+          </div>
+  
+          <div class="col-2 container">
+          ${produ.currency} ${produ.unitCost}
+          
+          </div>
+  
+  
+          <div class="col-2 container">
+          ${produ.count}
+          
+          </div> 
+  
+  
+          <div class="col-2 container">
+          
+          ${produ.count * produ.unitCost}
+          </div>
+          
+  
+          </div> 
+          `;
     });
   }
   document.addEventListener("DOMContentLoaded", function (e) {
@@ -39,7 +40,7 @@ function showCartList(array) {
       if (resultObj.status === "ok") {
         produArray = resultObj.data;
         showCartList(produArray.articles);
-        console.log(produArray.articles)
+        console.log(produArray.articles);
       }
     });
   });
