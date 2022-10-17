@@ -1,7 +1,13 @@
 function showCartList(array) {
-    array.forEach((produ) => {
-      document.getElementById("container").innerHTML += `
-          
+  array.forEach((produ) => {
+    
+    function resuFina(){
+      
+      if (document.getElementById("multiplicar")){let resuFina= document.getElementById("multiplicar").value;
+      document.getElementById("subTot").innerHTML += resuFina*produ.unitCost}
+    } 
+ document.getElementById("container").innerHTML += `
+    
       <div class="row">
           
           <div class="col-2 container"  >
@@ -17,23 +23,19 @@ function showCartList(array) {
           ${produ.currency} ${produ.unitCost}
           
           </div>
-  
-  
-          <div class="col-2 container">
-          ${produ.count}
+          
+          
+          <div class="col-2 container" >
+          <input type="number" id="multiplicar" onchange="${resuFina()}"></input>
           
           </div> 
-  
-  
-          <div class="col-2 container">
           
-          ${produ.count * produ.unitCost}
+          <div class="col-2 container" id="subTot">
           </div>
-          
   
           </div> 
           `;
-    });
+        });
   }
   document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CARRITO_URL).then(function (resultObj) {
