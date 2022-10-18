@@ -1,8 +1,12 @@
 const multiplicar = (prop) => {
+  if (condition) {
+    
+  }
   const subTot = document.getElementById("subTot");
   const cantidad = document.getElementById("cantidadInput").value;
-  subTot.innerHTML = (cantidad * prop);
+  subTot.innerHTML = "USD "+(cantidad * prop);
 };
+
 function showCartList(array) {
   array.forEach((produ) => {
     document.getElementById("container").innerHTML += `
@@ -25,14 +29,15 @@ function showCartList(array) {
           
           
           <div class="col-2 container" >
-          <input type="number"  id="cantidadInput" class='container-fluid' onchange='multiplicar(${produ.unitCost})'></input>
-          
+          <input type="number" id="cantidadInput" class='container-fluid w-45' onchange='multiplicar(${produ.unitCost})'></input>
           </div> 
           
-          <div class="col-2 container" id="subTot" >
+
+          <div class="col-2 container" id="subTot">
+          
           </div>
   
-          </div> 
+      </div> 
           `;
   });
 }
@@ -42,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       produArray = resultObj.data;
       showCartList(produArray.articles);
       console.log(produArray.articles);
+      
     }
   });
 });
