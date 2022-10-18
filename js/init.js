@@ -10,7 +10,6 @@ const PRODU_URL = PRODUCTS_URL+localStorage.getItem("catID")+EXT_TYPE;
 const PRODU_INFO=PRODUCT_INFO_URL+localStorage.getItem("itemID")+EXT_TYPE;
 const PRODUCT_INFO_COMMENTS = PRODUCT_INFO_COMMENTS_URL+localStorage.getItem("itemID")+EXT_TYPE;
 const CARRITO_URL = CART_INFO_URL+localStorage.getItem("cartID")+EXT_TYPE;
-console.log(CARRITO_URL)
 localStorage.setItem("cartID", "25801")
 
 
