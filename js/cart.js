@@ -1,10 +1,12 @@
 const multiplicar = (prop) => {
-  if (condition) {
-    
-  }
+  if (let (number >= subTot)>=0) { 
+    console.log("holaa")
+  
   const subTot = document.getElementById("subTot");
   const cantidad = document.getElementById("cantidadInput").value;
   subTot.innerHTML = "USD "+(cantidad * prop);
+}
+else null;
 };
 
 function showCartList(array) {
