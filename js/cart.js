@@ -1,12 +1,11 @@
 const multiplicar = (prop) => {
-  if (let (number >= subTot)>=0) { 
+ { 
     console.log("holaa")
-  
-  const subTot = document.getElementById("subTot");
-  const cantidad = document.getElementById("cantidadInput").value;
-  subTot.innerHTML = "USD "+(cantidad * prop);
+    const subTot =  document.getElementById("subTot");
+    const cantidad = document.getElementById("cantidadInput").value;
+    subTot.innerHTML = (cantidad * prop ) 
 }
-else null;
+
 };
 
 function showCartList(array) {
@@ -16,9 +15,9 @@ function showCartList(array) {
       <div class="row">
           
           <div class="col-2 container"  >
-          <img src= "${produ.image}" class="img-fluid img-thumbnail"/>
+          <img src= "${produ.image}" class="img-fluid img-thumbnail"/>                                   
           </div>
-         
+          
   
           <div class="col-2 container">
            ${produ.name}
@@ -31,12 +30,14 @@ function showCartList(array) {
           
           
           <div class="col-2 container" >
-          <input type="number" id="cantidadInput" class='container-fluid w-45' onchange='multiplicar(${produ.unitCost})'></input>
+          <input type="number" min="0" id="cantidadInput" class='container-fluid w-45' onchange='multiplicar(${produ.unitCost})'></input>
           </div> 
           
-
-          <div class="col-2 container" id="subTot">
+          <div class="col-2 container">
+          ${produ.currency}
+          <div class="d-inline" id="subTot">
           
+          </div>
           </div>
   
       </div> 
