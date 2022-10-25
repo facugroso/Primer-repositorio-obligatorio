@@ -39,9 +39,49 @@ function showCartList(array) {
     `;
   });
 }
-const multiplicar = (precio) => {
-       { 
-          const cantidad = document.getElementById("cantidadInput").value;
-          subTot.innerHTML = (cantidad * precio ) 
-      }
-      };
+const subTotGen = document.getElementById("subTotGen");
+const costEnv = document.getElementById("costEnvio");
+const totGen = document.getElementById("totGen");
+
+
+
+const multiplicar = (precio) => 
+{ 
+  const subTot = document.getElementById("subTot")
+  const cantidad = document.getElementById("cantidadInput").value
+  subTot.innerHTML = (cantidad*precio);
+  subTotGen.innerHTML = "USD "+ subTot.innerHTML
+  //costEnv.innerHTML = (porcentaje*precio)
+  
+};
+
+//const premm = document.getElementBiId("premium");
+//const expre = document.getElementBiId("express");
+//const stand = document.getElementBiId("standard");
+
+//let prob 
+
+function porcentaje(premium,expre,stand) {
+  //let premium = ((precio * 15/ 100 )+ precio)
+  //let expre =  ((precio * 7/ 100 )+ precio)
+  //let stand = ((precio * 5/ 100 )+ precio)
+  
+}
+
+
+//function costEnvio(precio, porcentaje){
+  //return Math.abs(precio * porcentaje / 100 + precio)
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
