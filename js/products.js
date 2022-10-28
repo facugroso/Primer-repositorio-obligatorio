@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODU_URL).then(function (resultObj) {
     if (resultObj.status === "ok") {
       produArray = resultObj.data;
-
       showProduList(produArray.products);
     }
     if (resultObj.status === "ok") {
@@ -54,10 +53,7 @@ function cat(array) {
   for (let cat of array) {
     document.getElementById("catName").innerHTML +=
       `
-   
-                <p> ` +
-      produ.catName +
-      `</p> 
+      <p> `+ produ.catName +`</p> 
                
     `;
   }

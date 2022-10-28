@@ -1,3 +1,6 @@
+
+
+
 document.getElementById("button").addEventListener("click", function () {
 
     let email = document.getElementById("txtEmail");
