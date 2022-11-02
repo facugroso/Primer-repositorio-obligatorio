@@ -164,13 +164,97 @@
       <div class="w-100 d-flex justify-content-between">
         <div>Total(gen):
         </div>
-        <div>monda-tot
-          </div id="totGen">
+        <div id="totGen">monda-tot
         </div>
       </div>
     </div>
 
-  </div>
+    </div>
+    </div>
+  
+    <div class="container">
+      <h3>Forma de pago</h3>
+      <div>
+        
+          No se a seleccionado
+          <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal" data-bs-target="#modalPago" id="boton">Selecionar</button>
+        
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary"> Finalizar compra</button>
+
+    <div class="modal fade" id="modalPago" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+
+
+
+
+
+            Forma de pago.
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <Form>
+              <div class="container form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="standard" checked >
+                Tarjeta de crédito
+               
+              <hr class="my-4">
+
+              <div class="row g-3">
+                <div class="col-sm-6">
+                <label for="numeroTarjeta">Numero de tarjeta</label>
+                <input type="number"></input>
+                </div>
+                
+                <div class="col-sm-6">
+                  <label for="codigoSeguridad">Código de seg.</label>
+                  <input type="number"></input>
+                </div>
+                
+                <div class="col-sm-6">
+                  <label for="vencimiento">Vencimiento(MM/AA)</label>
+                  <input type="text"></input>
+                </div>
+              </div>
+              </div>
+              <br>
+              <br>
+              <div class="container form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="standard" checked >
+                Transferencia bancaria
+                <hr class="my-4">
+                <div class="col-sm-6">
+                  <label for="numeroCuenta">Número de cuenta.</label>
+                  <input type="number"></input>
+                </div>
+              </div>
+            </Form>
+          </div>
+
+
+
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"  for="invalidCheck" value="" id="invalidCheck" required >
+           Cerrar
+            </button>
+            <div class="invalid-feedback">   
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    
   </main>
   <footer class="text-muted">
     <div class="container">
