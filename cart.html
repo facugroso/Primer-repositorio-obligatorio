@@ -91,19 +91,19 @@
       <br/>
       <h4 class="margin">Tipo de envio</h4>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="premium" checked onclick="porcentaje(0.15)">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="premium" checked onclick="porcentaje(0.15)"required>
         <label class="form-check-label" for="fpremium">
           Premium de 2 a 5 día(15%)
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="express" checked  onclick="porcentaje(0.07)">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="express" checked  onclick="porcentaje(0.07)"required>
         <label class="form-check-label" for="express">
           Express de 5 a 8 días(7%)
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="standard" checked  onclick="porcentaje(0.05)">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="standard" checked  onclick="porcentaje(0.05)"required>
         <label class="form-check-label" for="standard" >
           Standard de 12 a 15 días(5%)
         </label>
@@ -118,17 +118,17 @@
               
               <div class="col-sm-6">
                 <label for="calle" class="label">Calle</label>
-                <input type="text" class="form-control" id="calle">
+                <input type="text" class="form-control" id="calle" required>
               </div>
   
               <div class="col-sm-6">
                 <label for="numero" class="label">Número</label>
-                <input type="number" class="form-control" id="numero">
+                <input type="number" class="form-control" id="numero" required>
               </div>
   
               <div class="col-sm-6">
                 <label for="esquina" class="control-label"  >Esquina</label>
-                <input type="text" class="form-control" id="esquina">
+                <input type="text" class="form-control" id="esquina" required>
               </div>
   
             </div>
