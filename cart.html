@@ -102,60 +102,56 @@
       <br/>
       <h4 class="margin">Tipo de envio</h4>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="premium" checked onclick="porcentaje(0.15)"required>
-        <label class="form-check-label" for="fpremium">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="invalidCheck" checked onclick="porcentaje(0.15)"required>
+        <label class="form-check-label" for="invalidCheck">
           Premium de 2 a 5 día(15%)
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="express" checked  onclick="porcentaje(0.07)"required>
-        <label class="form-check-label" for="express">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="invalidCheck" checked  onclick="porcentaje(0.07)"required>
+        <label class="form-check-label" for="invalidCheck">
           Express de 5 a 8 días(7%)
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="standard" checked  onclick="porcentaje(0.05)"required>
-        <label class="form-check-label" for="standard" >
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="invalidCheck" checked  onclick="porcentaje(0.05)"required>
+        <label class="form-check-label" for="invalidCheck" >
           Standard de 12 a 15 días(5%)
         </label>
       </div>
       <br/>
-      <div>
-        <form class="row mt-3 needs-validation" novalidate>
-          <div class="col">
-            <h3>Dirección de envio</h3>
+      
         
-            <div class="row g-3">
-              
-              <div class="col-md-4">
-                <label for="validationDecult01" class="label">Calle</label>
-                <input type="text" class="form-control" id="validationDecult01" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback">Ingresa una calle</div>
-
-              </div>
-  
-              <div class="col-md-4">
-                <label for="validationDecult02" class="label">Número</label>
-                <input type="number" class="form-control" id="validationDefault02" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback">Ingresa un número</div>
-              </div>
-  
-              <div class="col-md-4">
-                <label for="esquina" class="control-label"  >Esquina</label>
-                <input type="text" class="form-control" id="esquina" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback">Ingresa una esquina</div>
-              </div>
-  
-            </div>
+        <form class="row g-3 needs-validation" novalidate>
+          <h3>Dirección de envio</h3>
+          
+          <div class="col-md-4">
+            <label for="validationCustom01" class="label">Calle</label>
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Ingresa una calle</div>
           </div>
-        </form>
-      </div>
+          
+          <div class="col-md-2">
+            <label for="validationCustom01" class="label">Número</label>
+            <input type="number" min="1" class="form-control" id="validationCustom02" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Ingresa un número</div>
+          </div>
+          
+          <div class="col-md-4">
+            <label for="validationCustom01" class="control-label"  >Esquina</label>
+            <input type="text" class="form-control" id="validationCustom01" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Ingresa una esquina</div>
+          </div>
+
+          
+          
     </div>
   </div>
-    
+  <br>
+  <br>
   <div class="container">
     <h3 class="">Costos</h3>
     <div class="container ">
@@ -189,7 +185,7 @@
 
     </div>
     </div>
-  
+  <br>
     <div class="container">
       <h3>Forma de pago</h3>
       <div>
@@ -198,15 +194,19 @@
           <div class="invalid-feedback">Ingresa una forma de pago</div>
       </div>
     </div>
-
-    <button type="submit" class="btn btn-primary"> Finalizar compra</button>
+   
+    
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
     
 
     <div class="modal fade" id="modalPago" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-
+            
             <h3>Forma de pago.</h3>
             <button type="button" class="btn btn-link " data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
@@ -222,7 +222,7 @@
               <div class="row g-3">
                 <div class="col-sm-6">
                 <label for="numeroTarjeta">Numero de tarjeta</label>
-                <input type="number"></input>
+                <input type="number" min="0"></input>
                 </div>
                 
                 <div class="col-sm-6">
@@ -244,96 +244,26 @@
                 <hr class="my-4">
                 <div class="col-sm-6">
                   <label for="numeroCuenta">Número de cuenta.</label>
-                  <input type="number"></input>
+                  <input type="number" min="0"></input>
                 </div>
               </div>
             </Form>
           </div>
 
-
-
-
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"  for="invalidCheck" value="" id="invalidCheck" required >
-           Cerrar
+              Cerrar
             </button>
             <div class="invalid-feedback">   
             </div>
           </div>
-
-
-
+          
+          
+          
         </div>
       </div>
     </div>
-
     
-    <form class="row g-3 needs-validation" novalidate>
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">First name</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label for="validationCustomUsername" class="form-label">Username</label>
-        <div class="input-group has-validation">
-          <span class="input-group-text" id="inputGroupPrepend">@</span>
-          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-          <div class="invalid-feedback">
-            Please choose a username.
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <label for="validationCustom03" class="form-label">City</label>
-        <input type="text" class="form-control" id="validationCustom03" required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-      <div class="col-md-3">
-        <label for="validationCustom04" class="form-label">State</label>
-        <select class="form-select" id="validationCustom04" required>
-          <option selected disabled value="">Choose...</option>
-          <option>...</option>
-        </select>
-        <div class="invalid-feedback">
-          Please select a valid state.
-        </div>
-      </div>
-      <div class="col-md-3">
-        <label for="validationCustom05" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="validationCustom05" required>
-        <div class="invalid-feedback">
-          Please provide a valid zip.
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-          <label class="form-check-label" for="invalidCheck">
-            Agree to terms and conditions
-          </label>
-          <div class="invalid-feedback">
-            You must agree before submitting.
-          </div>
-        </div>
-      </div>
-      <div class="col-12">
-        <button class="btn btn-primary" type="submit">Submit form</button>
-      </div>
-    </form>
-
-
   </main>
   <footer class="text-muted">
     <div class="container">
