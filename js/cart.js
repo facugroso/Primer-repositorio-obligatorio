@@ -25,8 +25,8 @@ function showCartList(array) {
           ${produ.currency} ${produ.unitCost}
           </div>
           
-          <div class="col-2 container" >
-          <input type="number" min="0" id="cantidadInput" class='container-fluid w-45' onchange='multiplicar(${produ.unitCost})'></input>
+          <div class="col-2 container needs-validation" novalidate>
+          <input type="number" min="0" id="cantidadInput" class='container-fluid w-45' onchange='multiplicar(${produ.unitCost})' required></input>
           </div> 
           
           <div class="col-2 container">
