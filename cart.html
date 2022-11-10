@@ -126,22 +126,22 @@
           <h3>Dirección de envio</h3>
           
           <div class="col-md-4">
-            <label for="validationCustom01" class="label">Calle</label>
-            <input type="text" class="form-control" id="validationCustom01" required>
+            <label for="calle" class="label">Calle</label>
+            <input type="text" class="form-control" id="calle" required>
             <div class="valid-feedback"></div>
             <div class="invalid-feedback">Ingresa una calle</div>
           </div>
           
           <div class="col-md-2">
-            <label for="validationCustom01" class="label">Número</label>
-            <input type="number" min="1" class="form-control" id="validationCustom02" required>
+            <label for="numero" class="label">Número</label>
+            <input type="number" min="1" class="form-control" id="numero" required>
             <div class="valid-feedback"></div>
             <div class="invalid-feedback">Ingresa un número</div>
           </div>
           
           <div class="col-md-4">
-            <label for="validationCustom01" class="control-label"  >Esquina</label>
-            <input type="text" class="form-control" id="validationCustom01" required>
+            <label for="esquina" class="control-label"  >Esquina</label>
+            <input type="text" class="form-control" id="esquina" required>
             <div class="valid-feedback"></div>
             <div class="invalid-feedback">Ingresa una esquina</div>
           </div>
@@ -191,13 +191,15 @@
       <div>
         No ha seleccionado
           <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal" data-bs-target="#modalPago" id="boton">Selecionar</button>
-          <div class="invalid-feedback">Ingresa una forma de pago</div>
+          <div class="valid-feedback"><span id="transferenciaBancaria"></span><span id="tarjetaDeCredito"></span></div>
+          <div class="invalid-feedback">No a selecionado</div>
+          
       </div>
     </div>
    
     
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit">Confirmar compra</button>
     </div>
   </form>
     
@@ -208,13 +210,14 @@
           <div class="modal-header">
             
             <h3>Forma de pago.</h3>
-            <button type="button" class="btn btn-link " data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn btn-link " data-bs-dismiss="modal" aria-label="Close">
+            </button>
           </div>
           <div class="modal-body">
 
             <Form>
               <div class="container form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="standard" checked >
+                <input class="form-check-input" type="radio" name="tarjetaDeCredito" id="tarjetaDeCredito" checked >
                 Tarjeta de crédito
                
               <hr class="my-4">
@@ -239,7 +242,7 @@
               <br>
               <br>
               <div class="container form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="standard" checked >
+                <input class="form-check-input" type="radio" name="transferenciaBancaria" id="transferenciaBancaria" checked >
                 Transferencia bancaria
                 <hr class="my-4">
                 <div class="col-sm-6">

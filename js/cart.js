@@ -97,6 +97,11 @@ function porcentaje(premium,expre,stand) {
 
 
 
+const formaPago = (pagar) => {
+const TARJCREDITO = document.getElementById("tarjetaDeCredito")
+const CUENTBANCARIA = document.getElementById("cuentaBancaria")
+
+}
 
 
 
