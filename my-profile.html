@@ -67,7 +67,7 @@
   <main>
     <div class="container">
      
-        <form action="#" method="get" class="row mt-3">
+        <form  class="row mt-3 needs-validation" novalidate>
           <div class="col">
             <br>
             <div><div><h5 class="d-flex justify-content">Perfil</h5><div id="imgPerfil"></div></div>
@@ -75,36 +75,42 @@
               <hr>
             </div>
         
-            <div class="row g-3 d-flex">
+            <div lass="row g-3 d-flex">
               
               <div class="col-sm-6">
                 <label for="primNombre" class="label ">Primer Nombre</label>
-                <input type="text" class="form-control" id="primNombre">
+                <input type="text" class="form-control" id="primNombre" required>
+                <div class="invalid-feedback">Ingresa el primer nombre</div>
               </div>
-  
+             
               <div class="col-sm-6">
                 <label for="segNombre" class="label">Segundo Nombre</label>
-                <input type="text" class="form-control" id="segNombre">
+                <input type="text" class="form-control" id="segNombre" required>
+                <div class="invalid-feedback">Ingresa el segundo nombre</div>
               </div>
   
               <div class="col-sm-6">
                 <label for="primApellido" class="label">Primer Apellido</label>
-                <input type="text" class="form-control" id="primApellido">
+                <input type="text" class="form-control" id="primApellido" required>
+                <div class="invalid-feedback">Ingresa el primer apellido</div>
               </div>
 
               <div class="col-sm-6">
                 <label for="segApellido" class="label">Segundo Apellido</label>
-                <input type="text" class="form-control" id="segApellido">
+                <input type="text" class="form-control" id="segApellido" required>
+                <div class="invalid-feedback">Ingresa el segundo apellido</div>
               </div>
   
               <div class="col-sm-6">
                 <label for="email">Email</label> 
                 <input type="text"  class="form-control" id="txtEmail" required>
+                <div class="invalid-feedback">Debe de ingresar un email</div>
               </div>
 
               <div class="col-sm-6">
                 <label for="numTelefono" class="label">Número de teléfono</label>
-                <input type="number" class="form-control" id="numTelefono">
+                <input type="number" min="1" class="form-control" id="numTelefono" required>
+                <div class="invalid-feedback">Debe de ingresar un numero telefónico</div>
               </div>
             </div>
             <br>
@@ -130,6 +136,7 @@
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  <script src="js/validation.js"></script>
 </body>
 
 </html>

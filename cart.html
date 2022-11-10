@@ -225,17 +225,17 @@
               <div class="row g-3">
                 <div class="col-sm-6">
                 <label for="numeroTarjeta">Numero de tarjeta</label>
-                <input type="number" min="0"></input>
+                <input type="number" min="0" aria-required></input>
                 </div>
                 
                 <div class="col-sm-6">
                   <label for="codigoSeguridad">Código de seg.</label>
-                  <input type="number"></input>
+                  <input type="number" min="0" required></input>
                 </div>
                 
                 <div class="col-sm-6">
                   <label for="vencimiento">Vencimiento(MM/AA)</label>
-                  <input type="text"></input>
+                  <input type="text" required></input>
                 </div>
               </div>
               </div>
@@ -290,6 +290,7 @@
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/validation.js"></script>
   
 </body>
 
