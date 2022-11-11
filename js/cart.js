@@ -40,8 +40,8 @@ function showCartList(array) {
   });
 }
 const subTotGen = document.getElementById("subTotGen");
-const costEnv = document.getElementById("costEnvio");
 const totGen = document.getElementById("totGen");
+const costEnv = document.getElementById("costEnvio");
 
 
 
@@ -51,36 +51,64 @@ const multiplicar = (precio) =>
   const cantidad = document.getElementById("cantidadInput").value
   subTot.innerHTML = (cantidad*precio);
   subTotGen.innerHTML = "USD "+ subTot.innerHTML
-  //costEnv.innerHTML = (porcentaje*precio)
+
   
 };
 
-//const premm = document.getElementBiId("premium");
-//const expre = document.getElementBiId("express");
-//const stand = document.getElementBiId("standard");
-
-//let prob 
-
-function porcentaje(premium,expre,stand) {
-  //let premium = ((precio * 15/ 100 )+ precio)
-  //let expre =  ((precio * 7/ 100 )+ precio)
-  //let stand = ((precio * 5/ 100 )+ precio)
-  
+const calcularEnvio = (porcentaje) => 
+{ 
+costEnv.innerHTML = porcentaje*subTot.innerHTML/100
 }
 
+const total = () => {
+totGen.innerHTML =  parseInt(costEnv.innerHTML) + parseInt(subTot.innerHTML)
 
-//function costEnvio(precio, porcentaje){
-  //return Math.abs(precio * porcentaje / 100 + precio)
-//}
+}
+ 
 
+const seleccionar = document.getElementById("seleccionar")
 
+function handleChange(radio) {
+  if (radio.checked == true) {
+    seleccionar.innerHTML  = "Tarjeta"
+    document.getElementById("pagoDatos").innerHTML = `
+    <form class="needs-validation" novalidate>
+    <div class="row g-3">
+    <div class="col-sm-6">
+    <label>Numero de tarjeta</label>
+    <input type="number" min="0" required></input>
+    </div>
+    
+    <div class="col-sm-6">
+    <label>Código de seg.</label>
+    <input type="number" min="0" required></input>
+    </div>
 
+  <div class="col-sm-6">
+    <label>Vencimiento(MM/AA)</label>
+    <input type="date" required></input>
+  </div>
+</div>;
+   </form>
 
-
-const formaPago = (pagar) => {
-const TARJCREDITO = document.getElementById("tarjetaDeCredito")
-const CUENTBANCARIA = document.getElementById("cuentaBancaria")
-
+ `;
+  }
+}
+function handleChangedos(radio) {
+  if (radio.checked == true) {
+    seleccionar.innerHTML  = "Transferencia"
+    document.getElementById("pagoDatos").innerHTML = `
+    <form class="needs-validation" novalidate>
+    <div class="row g-3 ">
+    <hr class="my-4">
+    <div class="col-sm-6">
+    <label>Número de cuenta.</label>
+    <input type="number" min="0"></input>
+    </div>
+    </div>
+    </form>
+    `;
+  }
 }
 
 
