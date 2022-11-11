@@ -88,7 +88,7 @@ function handleChange(radio) {
     <label>Vencimiento(MM/AA)</label>
     <input type="date" required></input>
   </div>
-</div>;
+</div>
    </form>
 
  `;
