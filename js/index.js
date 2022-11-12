@@ -22,10 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-function closesesion(){
+function closeSesion(){
     localStorage.removeItem("email")
 }
 
+
+function openSesion(){
+    localStorage.agrrItem("usuario")
+    
+}
 
 
 

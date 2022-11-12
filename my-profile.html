@@ -56,7 +56,9 @@
                 <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
                 <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
                 <li><a class="dropdown-item" href="index.html">Inicio</a></li>
-                <li><a class="dropdown-item" href="login.html" onclick="closesesion()">Cerrar sesión</a></li>
+                <li><a class="dropdown-item" href="login.html" onclick="openSesion()">Cerrar sesión</a></li>
+
+                <li><a class="dropdown-item" href="login.html" onclick="closeSesion()">Cerrar sesión</a></li>
               </ul>
             </div>
           </li>
@@ -102,8 +104,8 @@
               </div>
   
               <div class="col-sm-6">
-                <label for="correo" class="label">Email</label>
-                <input type="email"  class="form-control" id="correo" required/>
+                <label for="email" class="label">Email</label>
+                <input type="email"  class="form-control" id="email" required/>
                 <div class="invalid-feedback">Debe de ingresar un email</div>
               </div>
 

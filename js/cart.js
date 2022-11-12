@@ -66,60 +66,82 @@ const total = () => {
 totGen.innerHTML =  parseInt(costEnv.innerHTML) + parseInt(subTot.innerHTML)
 
 }
- 
-const option1 = document.getElementById("option1")
-const option2 = document.getElementById("option2")
-const seleccionar = document.getElementById("seleccionar")
+const infSobrePago = document.getElementById("infoSobrePago");
 
+let tipoDePagoElegido;
 function handleChange(radio) {
   if (radio.checked == true) {
-    seleccionar.innerHTML  = "Seleccionar"
+    tipoDePagoElegido = "Tarjeta";
     document.getElementById("pagoDatos").innerHTML = `
-   
-    <div class="row g-3 ">
-
-    <div class="col-sm-6">
+ <div class="row g-3">
+  <div class="col-sm-6">
     <label>Numero de tarjeta</label>
-    <input type="number" min="0" ></input>
-    </div>
-    
-    <div class="col-sm-6">
+    <input type="number" min="0" class='validadora' required></input>
+  </div>
+
+  <div class="col-sm-6">
     <label>Código de seg.</label>
-    <input type="number" min="0" ></input>
-    </div>
+    <input type="number" min="0" class='validadora' required></input>
+  </div>
 
-    <div class="col-sm-6">
+  <div class="col-sm-6">
     <label>Vencimiento(MM/AA)</label>
-    <input type="date" ></input>
-    </div>
-
-    </div>
-    
-    
+    <input type="date" class='validadora' required></input>
+  </div>
+</div>;
 
  `;
   }
 }
 function handleChangedos(radio) {
   if (radio.checked == true) {
-    seleccionar.innerHTML  = "Selecionar"
+    tipoDePagoElegido = "Transferencia";
     document.getElementById("pagoDatos").innerHTML = `
-    
-
-    <div class="row g-3 ">
+    <div class="row g-3">
     <hr class="my-4">
-
     <div class="col-sm-6">
     <label>Número de cuenta.</label>
-    <input type="number" min="0" ></input>
+    <input type="number" class='validadora' min="0"></input>
     </div>
-
-    </div>
-
+</div>
     `;
   }
 }
 
+const validadorModal = () => {
+  const etiquetaValidadora = document.getElementsByClassName("validadora");
+  const cantidadDeDatosValidados = [];
+  Array.from(etiquetaValidadora).forEach((item) => {
+    if (item.value !== "") {
+      cantidadDeDatosValidados.push(item.value);
+    }
+  });
+  if (
+    cantidadDeDatosValidados.length === Array.from(etiquetaValidadora).length
+  ) {
+    infSobrePago.innerHTML = "Has seleccionado " + tipoDePagoElegido;
+    return true;
+  } else {
+    infSobrePago.innerHTML = "Falta añadir datos en tu modal";
+  }
+};
+const validadorGen = () => {
+  const etiquetaValidadora = document.getElementsByClassName("validadoraGen");
+  const cantidadDeDatosValidados = [];
+  Array.from(etiquetaValidadora).forEach((item) => {
+    if (item.value !== "") {
+      cantidadDeDatosValidados.push(item.value);
+    }
+  });
+  if (
+    cantidadDeDatosValidados.length === Array.from(etiquetaValidadora).length &&
+    infSobrePago.innerHTML !== "Falta añadir datos en tu modal"
+  ) {
+    alert("Has completado todos los datos!!!");
+  } else {
+    console.log("cagaste");
+  }
+};
 
 
 
