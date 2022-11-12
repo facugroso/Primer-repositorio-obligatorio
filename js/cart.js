@@ -25,10 +25,12 @@ function showCartList(array) {
           ${produ.currency} ${produ.unitCost}
           </div>
           
-          <div class="col-2 container needs-validation" novalidate>
+          <div class="col-2 container">
+          <form class="needs-validation" novalidate>
+
           <input type="number" min="0" id="cantidadInput" class='container-fluid w-45' onchange='multiplicar(${produ.unitCost})' required></input>
           </div> 
-          
+          </form>
           <div class="col-2 container">
           ${produ.currency}
           <div class="d-inline" id="subTot">
@@ -65,48 +67,55 @@ totGen.innerHTML =  parseInt(costEnv.innerHTML) + parseInt(subTot.innerHTML)
 
 }
  
-
+const option1 = document.getElementById("option1")
+const option2 = document.getElementById("option2")
 const seleccionar = document.getElementById("seleccionar")
 
 function handleChange(radio) {
   if (radio.checked == true) {
-    seleccionar.innerHTML  = "Tarjeta"
+    seleccionar.innerHTML  = "Seleccionar"
     document.getElementById("pagoDatos").innerHTML = `
-    <form class="needs-validation" novalidate>
-    <div class="row g-3">
+   
+    <div class="row g-3 ">
+
     <div class="col-sm-6">
     <label>Numero de tarjeta</label>
-    <input type="number" min="0" required></input>
+    <input type="number" min="0" ></input>
     </div>
     
     <div class="col-sm-6">
     <label>Código de seg.</label>
-    <input type="number" min="0" required></input>
+    <input type="number" min="0" ></input>
     </div>
 
-  <div class="col-sm-6">
+    <div class="col-sm-6">
     <label>Vencimiento(MM/AA)</label>
-    <input type="date" required></input>
-  </div>
-</div>
-   </form>
+    <input type="date" ></input>
+    </div>
+
+    </div>
+    
+    
 
  `;
   }
 }
 function handleChangedos(radio) {
   if (radio.checked == true) {
-    seleccionar.innerHTML  = "Transferencia"
+    seleccionar.innerHTML  = "Selecionar"
     document.getElementById("pagoDatos").innerHTML = `
-    <form class="needs-validation" novalidate>
+    
+
     <div class="row g-3 ">
     <hr class="my-4">
+
     <div class="col-sm-6">
     <label>Número de cuenta.</label>
-    <input type="number" min="0"></input>
+    <input type="number" min="0" ></input>
     </div>
+
     </div>
-    </form>
+
     `;
   }
 }
