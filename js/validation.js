@@ -4,16 +4,16 @@ const daledale = ()=>{
   const segNombre = document.getElementById("segNombre")
   const primApellido = document.getElementById("primApellido")
   const segApellido = document.getElementById("segApellido")
-  const emaill = document.getElementById("txtEmail")
+  const email = document.getElementById("correo")
   const numTelefono = document.getElementById("numTelefono")
-  console.log(emaill)
+  console.log(email)
   
-  localStorage.setItem("primNombre",primNombre.value)
-  localStorage.setItem("segNombre",segNombre.value)
-  localStorage.setItem("primApellido",primApellido.value)
-  localStorage.setItem("segApellido",segApellido.value)
-  localStorage.setItem("txtEmail",emaill.value)
-  localStorage.setItem("numTelefono",numTelefono.value)
+  localStorage.setItem("primNombre",primNombre.value);
+  localStorage.setItem("segNombre",segNombre.value);
+  localStorage.setItem("primApellido",primApellido.value);
+  localStorage.setItem("segApellido",segApellido.value);
+  localStorage.setItem("correo",email.value);
+  localStorage.setItem("numTelefono",numTelefono.value);
   }
   
 (function () {
