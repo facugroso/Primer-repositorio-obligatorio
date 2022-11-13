@@ -11,26 +11,26 @@ function showCartList(array) {
   array.forEach((produ) => {
     document.getElementById("container").innerHTML += `
     
-    <div class="row">
+    <div class="row img-thumbnail">
     
-    <div class="col-2 container"  >
+    <div class="col-2 container "  >
     <img src= "${produ.image}" class="img-fluid img-thumbnail"/>                                   
           </div>
           
-          <div class="col-2 container">
+          <div class="col-2 container img-thumbnail">
           ${produ.name}
           </div>
           
-          <div class="col-2 container">
+          <div class="col-2 container img-thumbnail">
           ${produ.currency} ${produ.unitCost}
           </div>
           
           <div class="col-2 container">
-          <input type="number" min="0" id="cantidadInput" class='form-control container-fluid w-45' onchange='multiplicar(${produ.unitCost})' required></input>
+          <input type="number" min="0" id="cantidadInput" class='form-control container-fluid w-45 img-thumbnail' onchange='multiplicar(${produ.unitCost})' required></input>
               <div class="invalid-feedback">Ingresa un número</div>
           </div> 
           
-          <div class="col-2 container">
+          <div class="col-2 container img-thumbnail">
           ${produ.currency}
           <div class="d-inline" id="subTot">
           </div>
