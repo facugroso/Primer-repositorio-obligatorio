@@ -135,12 +135,11 @@
               </div>
             </div>
           </div>
+          <form class="row g-3 needs-validation" novalidate>
           <div class="container w-100" id="container"></div>
-        </div>
-        <br />
-        <br />
+          <br />
+          <br />
 
-        <form class="row g-3 needs-validation" novalidate>
           <div class="container w-100">
             <h4 class="margin">Tipo de envio</h4>
             <div class="form-check">
@@ -259,32 +258,34 @@
           </div>
           <br />
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<div><div id="infoSobrePago"></div>
+<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdoopModal">
   Seleccionar
 </button>
+</div> 
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdoopModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdoopModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdoopModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="form-check">
-  <input class="form-check-input" type="radio" name="radio-stacked" id="validationFormCheck3" onclick="cambio(0)">
-  <label class="form-check-label" for="validationFormCheck3">
-    Tarjeta de credito.
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radio-stacked" id="validationFormCheck3" onclick="cambio(1)">
-  <label class="form-check-label" for="validationFormCheck3">
-    Transferencia Bancaria.
-  </label>
-</div>
-<div id="pagoDatos"></div>
+          <input class="form-check-input" type="select" name="radio-stacked" id="flexRadioDefault1" onclick="cambio(0)">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Tarjeta de credito.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="select" name="radio-stacked" id="flexRadioDefault2" onclick="cambio(1)" >
+          <label class="form-check-label" for="flexRadioDefault2">
+            Transferencia Bancaria.
+          </label>
+        </div>
+        <div id="pagoDatos"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
@@ -293,11 +294,13 @@
   </div>
 </div>
 
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">
-              Confirmar compra
-            </button>
-          </div>
+<div class="col-12">
+  <button class="container btn btn-primary" type="submit">
+    Finalizar compra
+  </button>
+  
+</div>
+</div>
         </form>
       </div>
     </main>
