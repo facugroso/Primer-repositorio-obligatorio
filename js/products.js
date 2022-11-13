@@ -60,4 +60,3 @@ function cat(array) {
   lista.innerHTML = opcion;
   
 }
-

@@ -129,17 +129,3 @@ function showProduRelation(array){
     return numeros.join("")
     
   }
-
-
-
-
-
-
-  
-  
-    
- 
-    
-    
-    
-    

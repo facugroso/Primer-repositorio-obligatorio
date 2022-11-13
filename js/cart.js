@@ -45,60 +45,53 @@ const subTotGen = document.getElementById("subTotGen");
 const totGen = document.getElementById("totGen");
 const costEnv = document.getElementById("costEnvio");
 
-
-
-const multiplicar = (precio) => 
-{ 
-  const subTot = document.getElementById("subTot")
-  const cantidad = document.getElementById("cantidadInput").value
-  subTot.innerHTML = (cantidad*precio);
-  subTotGen.innerHTML = "USD "+ subTot.innerHTML
-
-  
+const multiplicar = (precio) => {
+  const subTot = document.getElementById("subTot");
+  const cantidad = document.getElementById("cantidadInput").value;
+  subTot.innerHTML = cantidad * precio;
+  subTotGen.innerHTML = "USD " + subTot.innerHTML;
 };
 
-const calcularEnvio = (porcentaje) => 
-{ 
-costEnv.innerHTML = porcentaje*subTot.innerHTML/100
-}
+const calcularEnvio = (porcentaje) => {
+  costEnv.innerHTML = (porcentaje * subTot.innerHTML) / 100;
+};
 
 const total = () => {
-totGen.innerHTML =  parseInt(costEnv.innerHTML) + parseInt(subTot.innerHTML)
-
-}
+  totGen.innerHTML = parseInt(costEnv.innerHTML) + parseInt(subTot.innerHTML);
+};
 const infSobrePago = document.getElementById("infoSobrePago");
 
 let tipoDePagoElegido;
-function handleChange(radio) {
-  if (radio.checked == true) {
+
+const cambio = (p) => {
+  let variable = 0;
+  variable = p;
+  if (variable == 0) {
     tipoDePagoElegido = "Tarjeta";
     document.getElementById("pagoDatos").innerHTML = `
- <div class="row g-3">
+  <div class="row g-3">
   <div class="col-sm-6">
     <label>Numero de tarjeta</label>
     <input type="number" min="0" class='validadora' required></input>
   </div>
-
+  
   <div class="col-sm-6">
     <label>Código de seg.</label>
     <input type="number" min="0" class='validadora' required></input>
   </div>
-
+  
   <div class="col-sm-6">
     <label>Vencimiento(MM/AA)</label>
     <input type="date" class='validadora' required></input>
   </div>
-</div>;
-
- `;
+  </div>;
+  
+  `;
   }
-}
-function handleChangedos(radio) {
-  if (radio.checked == true) {
+  if (variable == 1) {
     tipoDePagoElegido = "Transferencia";
     document.getElementById("pagoDatos").innerHTML = `
     <div class="row g-3">
-    <hr class="my-4">
     <div class="col-sm-6">
     <label>Número de cuenta.</label>
     <input type="number" class='validadora' min="0"></input>
@@ -106,59 +99,4 @@ function handleChangedos(radio) {
 </div>
     `;
   }
-}
-
-const validadorModal = () => {
-  const etiquetaValidadora = document.getElementsByClassName("validadora");
-  const cantidadDeDatosValidados = [];
-  Array.from(etiquetaValidadora).forEach((item) => {
-    if (item.value !== "") {
-      cantidadDeDatosValidados.push(item.value);
-    }
-  });
-  if (
-    cantidadDeDatosValidados.length === Array.from(etiquetaValidadora).length
-  ) {
-    infSobrePago.innerHTML = "Has seleccionado " + tipoDePagoElegido;
-    return true;
-  } else {
-    infSobrePago.innerHTML = "Falta añadir datos en tu modal";
-  }
 };
-const validadorGen = () => {
-  const etiquetaValidadora = document.getElementsByClassName("validadoraGen");
-  const cantidadDeDatosValidados = [];
-  Array.from(etiquetaValidadora).forEach((item) => {
-    if (item.value !== "") {
-      cantidadDeDatosValidados.push(item.value);
-    }
-  });
-  if (
-    cantidadDeDatosValidados.length === Array.from(etiquetaValidadora).length &&
-    infSobrePago.innerHTML !== "Falta añadir datos en tu modal"
-  ) {
-    alert("Has completado todos los datos!!!");
-  } else {
-    console.log("cagaste");
-  }
-};
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
