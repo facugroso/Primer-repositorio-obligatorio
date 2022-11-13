@@ -71,17 +71,21 @@ const cambio = (p) => {
   <div class="was-validated">
   <div class="col-sm-6">
     <label>Numero de tarjeta</label>
-    <input type="number" min="0" class='form-control' required></input>
+    <input type="number" class='form-control container-fluid w-45' min="0" required></input>
+    <div class="invalid-feedback">Ingresa un número</div>
+
   </div>
   
   <div class="col-sm-6">
     <label>Código de seg.</label>
-    <input type="number" min="0" class='form-control' required></input>
+    <input type="number" class='form-control container-fluid w-45' min="0" required></input>
+    <div class="invalid-feedback">Ingresa un número</div>
+
   </div>
   
   <div class="col-sm-6">
     <label>Vencimiento(MM/AA)</label>
-    <input type="date" class='form-control' required</input>
+    <input type="date" class='form-control container-fluid w-45' in-valid></input>
   </div>
   </div>;
   
@@ -90,7 +94,7 @@ const cambio = (p) => {
   else if (variable == 1) {
     tipoDePagoElegido = "Transferencia";
     document.getElementById("pagoDatos").innerHTML = `
-    <div class="col-sm-6">
+    <div class="was-validated">
     <label>Número de cuenta.</label>
     <input type="number" class='form-control container-fluid w-45' min="0" required></input>
     <div class="invalid-feedback">Ingresa un número</div>

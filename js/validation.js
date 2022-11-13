@@ -44,9 +44,10 @@ const datosUsuario = () => {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
-          
+          alert("Por favor ingrese los datos correctamente");
         } else 
-        {alert ("Datos ingresados correctamente");
+        {
+        alert("¡Has comprado con exito!");
         datosUsuario();
         }
 
