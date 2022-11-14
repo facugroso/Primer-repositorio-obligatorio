@@ -21,13 +21,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link active" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="sell.html">Vender</a>
+            <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item"> 
             <a class="nav-link" id="txtEmail"></a>
@@ -38,8 +38,9 @@
                 Cuenta
               </button>
               <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="index.html">Inicio</a></li>
                 <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <div id="usuario"></div>
                 <li><a class="dropdown-item" href="login.html" onclick="closesesion()">Cerrar sesión</a></li>
               </ul>
             </div>
