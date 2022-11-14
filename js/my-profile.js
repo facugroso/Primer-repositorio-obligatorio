@@ -1,5 +1,6 @@
 
 const usuario = document.getElementById("usuario");
+
 const correo = document.getElementById("txtEmail");
 
 document.addEventListener("DOMContentLoaded", function (e) {

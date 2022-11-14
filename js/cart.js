@@ -125,21 +125,18 @@ const cambio = (p) => {
         } else 
         {
         alert("¡Has comprado con exito!");
-        datosUsuario();
+        ;
         }
-
         form.classList.add("was-validated");
       },
       false
     );
   });
 })();
-const usuario = document.getElementById("usuario");
 const correo = document.getElementById("txtEmail");
 
 document.addEventListener("DOMContentLoaded", function (e) {
   if (localStorage.getItem("email")) {
-    usuario.innerHTML = `<li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>`;
     correo.innerHTML = localStorage.getItem("email");
   }
 });
